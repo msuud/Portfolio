@@ -1,10 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Colorful Dark Theme Variables */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --accent-primary: #4ecdc4;
+  --accent-secondary: #45b7d1;
+  --accent-tertiary: #a855f7;
+  --accent-quaternary: #f9ca24;
+  --accent-quinary: #10b981;
+  --accent-senary: #8b5cf6;
+  --gradient-primary: linear-gradient(135deg, #4ecdc4, #45b7d1);
+  --gradient-secondary: linear-gradient(135deg, #45b7d1, #a855f7);
+  --gradient-tertiary: linear-gradient(135deg, #f9ca24, #10b981);
+  --gradient-quaternary: linear-gradient(135deg, #a855f7, #8b5cf6);
+  --gradient-rainbow: linear-gradient(135deg, #4ecdc4, #45b7d1, #a855f7, #f9ca24, #10b981, #8b5cf6);
+  --shadow-primary: 0 10px 25px rgba(78, 205, 196, 0.3);
+  --shadow-secondary: 0 20px 40px rgba(69, 183, 209, 0.4);
+  --shadow-tertiary: 0 15px 30px rgba(249, 202, 36, 0.3);
+  --border-primary: rgba(78, 205, 196, 0.3);
+  --border-secondary: rgba(69, 183, 209, 0.4);
+  --border-tertiary: rgba(249, 202, 36, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 code {

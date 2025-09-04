@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import Navigation from './components/Navigation';
+import Background3D from './components/Background3D';
+import Home from './pages/Home';
+import About from './pages/About';
+import Experience from './pages/Experience';
+import Research from './pages/Research';
+import Achievements from './pages/Achievements';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
+import Footer from './components/Footer';
 import './App.css';
+
+// MODIFIED: Removed the background property
+const AppContainer = styled.div`
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+`;
+
+const PageContainer = styled.div`
+  min-height: 100vh;
+  padding-top: 80px; /* Account for fixed navigation */
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContainer>
+        <Background3D />
+        <Navigation />
+        <PageContainer>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </PageContainer>
+      </AppContainer>
+      <Footer />
+    </Router>
   );
 }
 
