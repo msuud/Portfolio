@@ -1,22 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import styled from 'styled-components';
-import Navigation from './components/Navigation';
-import Background3D from './components/Background3D';
-import Home from './pages/Home';
-import About from './pages/About';
-import Experience from './pages/Experience';
-import Research from './pages/Research';
-import Achievements from './pages/Achievements';
-import Resume from './pages/Resume';
-import Contact from './pages/Contact';
-import Footer from './components/Footer';
-import './App.css';
+import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+import Navigation from "./components/Navigation";
+import Background3D from "./components/Background3D";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Experience from "./pages/Experience";
+import Research from "./pages/Research";
+import Achievements from "./pages/Achievements";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import "./App.css";
 
 // MODIFIED: Removed the background property
 const AppContainer = styled.div`
   min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
   overflow-x: hidden;
   position: relative;
 `;
@@ -34,12 +34,12 @@ function App() {
         <Navigation />
         <PageContainer>
           <Routes>
+            <Route index element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/research" element={<Research />} />
             <Route path="/achievements" element={<Achievements />} />
-            <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </PageContainer>

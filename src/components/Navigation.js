@@ -144,7 +144,6 @@ const Navigation = () => {
     { name: 'Experience', path: '/experience' },
     { name: 'Research', path: '/research' },
     { name: 'Achievements', path: '/achievements' },
-    { name: 'Resume', path: '/resume' },
     { name: 'Contact', path: '/contact' }
   ];
 
