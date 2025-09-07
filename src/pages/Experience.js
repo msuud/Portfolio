@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
 
-import { FaBriefcase, FaCode, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaShoppingCart, FaTasks, FaCloudSun, FaChartBar, FaChevronDown } from 'react-icons/fa';
+import {
+  FaBriefcase,
+  FaCode,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+  FaShoppingCart,
+  FaTasks,
+  FaCloudSun,
+  FaChartBar,
+  FaChevronDown,
+} from "react-icons/fa";
 
 // --- STYLED COMPONENTS (with modifications) ---
 
@@ -25,7 +36,7 @@ const SectionTitle = styled(motion.h2)`
   margin-bottom: 1rem;
   position: relative;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -54,7 +65,7 @@ const TabContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
-  background: #000000; 
+  background: #000000;
   backdrop-filter: blur(20px);
   border-radius: 50px;
   padding: 0.5rem;
@@ -68,8 +79,9 @@ const Tab = styled(motion.button)`
   flex: 1;
   padding: 1rem 2rem;
   border: none;
-  background: ${props => props.active ? 'var(--gradient-primary)' : 'transparent'};
-  color: ${props => props.active ? 'white' : 'var(--text-secondary)'};
+  background: ${(props) =>
+    props.active ? "var(--gradient-primary)" : "transparent"};
+  color: ${(props) => (props.active ? "white" : "var(--text-secondary)")};
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
@@ -77,7 +89,7 @@ const Tab = styled(motion.button)`
   font-size: 1rem;
 
   &:hover {
-    color: ${props => props.active ? 'white' : 'var(--accent-primary)'};
+    color: ${(props) => (props.active ? "white" : "var(--accent-primary)")};
   }
 `;
 
@@ -93,7 +105,9 @@ const AccordionContainer = styled(motion.div)`
 
 const AccordionItem = styled.div`
   background: #000000; /* Solid black */
-  backdrop-filter: blur(20px); /* Keep if you want the blur effect on the black */
+  backdrop-filter: blur(
+    20px
+  ); /* Keep if you want the blur effect on the black */
   border-radius: 20px;
   border: 1px solid var(--border-primary);
   box-shadow: none;
@@ -102,7 +116,7 @@ const AccordionItem = styled.div`
 
   &:hover {
     box-shadow: var(--shadow-hover, 0 8px 30px rgba(0, 0, 0, 0.2));
-    border-color: var(--border-secondary, #6366F1);
+    border-color: var(--border-secondary, #6366f1);
   }
 `;
 
@@ -202,7 +216,7 @@ const ProjectLink = styled.a`
 // --- MAIN COMPONENT ---
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState('experience');
+  const [activeTab, setActiveTab] = useState("experience");
   const [expandedIndex, setExpandedIndex] = useState(0); // Default first item to be open
 
   const experiences = [
@@ -211,54 +225,91 @@ const Experience = () => {
       company: "GirlScript Summer of Code 2025",
       duration: "July 2025 - Present", // [cite: 15]
       location: "Remote", // [cite: 15]
-      description: "Contributing to multiple open-source repositories, solving over 50 issues and merging 38+ pull requests. Collaborated with a global community of mentors and developers and earned two Pull Shark Badges on GitHub.",
-      techStack: ["Git", "GitHub", "Open Source", "Collaboration"]
+      description:
+        "Contributing to multiple open-source repositories (over 10+), solving over 50 issues and merging 40+ pull requests. Collaborated with a global community of mentors and developers and earned two Pull Shark Badges on GitHub.",
+      techStack: ["Git", "GitHub", "Open Source", "Collaboration"],
     },
     {
       title: "Web Developer Intern",
       company: "MaMo TechnoLabs LLP",
       duration: "May 2024 - June 2024", // [cite: 19]
       location: "Vadodara, Gujarat", // [cite: 19]
-      description: "Gained hands-on experience in full-stack web development. Built a complete responsive web project that applied concepts of both frontend and backend integration.",
-      techStack: ["Web Development", "Frontend", "Backend", "Project Management"]
+      description:
+        "Gained hands-on experience in full-stack web development. Built a complete responsive web project that applied concepts of both frontend and backend integration.",
+      techStack: [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "Project Management",
+      ],
     },
   ];
 
   const projects = [
     {
       title: "MaatriCare: AI-Powered Maternal Health Support",
-      description: "Built a maternal health platform providing prenatal and postnatal guidance. Enabled SMS-based AI replies using the Gemini API for users without internet, and included features like symptom triage and pregnancy tracking.",
+      description:
+        "Built a maternal health platform providing prenatal and postnatal guidance. Enabled SMS-based AI replies using the Gemini API for users without internet, and included features like symptom triage and pregnancy tracking.",
       techStack: ["React.js", "Node.js", "Firebase", "Gemini API"], // [cite: 26]
-      link: "https://github.com/msuud/MaatriCare" // <-- UPDATE THIS LINK
+      link: "https://github.com/msuud/MaatriCare", // <-- UPDATE THIS LINK
     },
     {
       title: "ContestBuzz: Competitive Programming Notifier",
-      description: "Integrated the Clist.by API to fetch real-time contest data from 5 major coding platforms. Implemented an email reminder feature using SendGrid to ensure users never miss a contest.",
-      techStack: ["React.js", "Node.js", "Firebase", "SendGrid API", "Clist.by API"], // [cite: 32]
-      link: "https://github.com/msuud/ContestBuzz" // <-- UPDATE THIS LINK
+      description:
+        "Integrated the Clist.by API to fetch real-time contest data from 5 major coding platforms. Implemented an email reminder feature using SendGrid to ensure users never miss a contest.",
+      techStack: [
+        "React.js",
+        "Node.js",
+        "Firebase",
+        "SendGrid API",
+        "Clist.by API",
+      ], // [cite: 32]
+      link: "https://github.com/msuud/ContestBuzz", // <-- UPDATE THIS LINK
     },
     {
       title: "OIPulse ActiveStrike Data Fetcher",
-      description: "Developed a Python-based automation tool to periodically fetch active strike open interest (OI) data from OIPulse’s live options analysis page. Automated API fetching, filtering, and saving structured data into daily CSV files every 5 minutes, ensuring accuracy and eliminating manual entry for real-time monitoring.",
-      techStack: ["Python", "Selenium", "Requests", "Pandas", "ChromeDriver", "PyInstaller"],
-      link: "https://github.com/msuud/OIPulse-ActiveStrike-Data-Fetcher" // <-- UPDATE THIS LINK
-    }
+      description:
+        "Developed a Python-based automation tool to periodically fetch active strike open interest (OI) data from OIPulse’s live options analysis page. Automated API fetching, filtering, and saving structured data into daily CSV files every 5 minutes, ensuring accuracy and eliminating manual entry for real-time monitoring.",
+      techStack: [
+        "Python",
+        "Selenium",
+        "Requests",
+        "Pandas",
+        "ChromeDriver",
+        "PyInstaller",
+      ],
+      link: "https://github.com/msuud/OIPulse-ActiveStrike-Data-Fetcher", // <-- UPDATE THIS LINK
+    },
   ];
 
-  const currentList = activeTab === 'experience' ? experiences : projects;
+  const currentList = activeTab === "experience" ? experiences : projects;
 
   return (
     <ExperienceContainer id="experience">
       <ContentWrapper>
         <SectionTitle>Experience & Projects</SectionTitle>
-        <SectionSubtitle>My professional journey and notable projects</SectionSubtitle>
+        <SectionSubtitle>
+          My professional journey and notable projects
+        </SectionSubtitle>
 
         <TabContainer>
-          <Tab active={activeTab === 'experience'} onClick={() => { setActiveTab('experience'); setExpandedIndex(0); }}>
-            <FaBriefcase style={{ marginRight: '0.5rem' }} /> Experience
+          <Tab
+            active={activeTab === "experience"}
+            onClick={() => {
+              setActiveTab("experience");
+              setExpandedIndex(0);
+            }}
+          >
+            <FaBriefcase style={{ marginRight: "0.5rem" }} /> Experience
           </Tab>
-          <Tab active={activeTab === 'projects'} onClick={() => { setActiveTab('projects'); setExpandedIndex(0); }}>
-            <FaCode style={{ marginRight: '0.5rem' }} /> Projects
+          <Tab
+            active={activeTab === "projects"}
+            onClick={() => {
+              setActiveTab("projects");
+              setExpandedIndex(0);
+            }}
+          >
+            <FaCode style={{ marginRight: "0.5rem" }} /> Projects
           </Tab>
         </TabContainer>
 
@@ -273,12 +324,20 @@ const Experience = () => {
             >
               {currentList.map((item, index) => (
                 <AccordionItem key={index}>
-                  <AccordionHeader onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}>
+                  <AccordionHeader
+                    onClick={() =>
+                      setExpandedIndex(expandedIndex === index ? null : index)
+                    }
+                  >
                     <AccordionTitleGroup>
                       <AccordionTitle>{item.title}</AccordionTitle>
-                      {item.company && <AccordionSubtitle>{item.company}</AccordionSubtitle>}
+                      {item.company && (
+                        <AccordionSubtitle>{item.company}</AccordionSubtitle>
+                      )}
                     </AccordionTitleGroup>
-                    <ChevronIcon animate={{ rotate: expandedIndex === index ? 180 : 0 }}>
+                    <ChevronIcon
+                      animate={{ rotate: expandedIndex === index ? 180 : 0 }}
+                    >
                       <FaChevronDown />
                     </ChevronIcon>
                   </AccordionHeader>
@@ -286,26 +345,37 @@ const Experience = () => {
                     {expandedIndex === index && (
                       <AccordionContent
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
+                        animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
                       >
                         <Description>{item.description}</Description>
                         <TechStack>
-                          {item.techStack.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
+                          {item.techStack.map((tech) => (
+                            <TechTag key={tech}>{tech}</TechTag>
+                          ))}
                         </TechStack>
-                        
-                        {activeTab === 'experience' ? (
+
+                        {activeTab === "experience" ? (
                           <MetaGrid>
-                            <MetaItem><FaCalendarAlt />{item.duration}</MetaItem>
-                            <MetaItem><FaMapMarkerAlt />{item.location}</MetaItem>
+                            <MetaItem>
+                              <FaCalendarAlt />
+                              {item.duration}
+                            </MetaItem>
+                            <MetaItem>
+                              <FaMapMarkerAlt />
+                              {item.location}
+                            </MetaItem>
                           </MetaGrid>
                         ) : (
-                          <ProjectLink href={item.link} target="_blank" rel="noopener noreferrer">
+                          <ProjectLink
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             View Project <FaExternalLinkAlt />
                           </ProjectLink>
                         )}
-
                       </AccordionContent>
                     )}
                   </AnimatePresence>
